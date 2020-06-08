@@ -1,7 +1,5 @@
-//for evaluation of running time
-//maid by HONGJUNGMO
 #include <chrono>
-
+#include <iostream>
 class Timer
 {
 	using clock_t = std::chrono::high_resolution_clock;
@@ -14,13 +12,9 @@ public:
 	{
 		std::chrono::time_point<clock_t> end_time = clock_t::now(); //Destroy time check
 
-		cout << std::chrono::duration_cast<second_t>(end_time - start_time).count() << endl;
+		std::cout << std::chrono::duration_cast<second_t>(end_time - start_time).count() << std::endl;
 	}
 };
 
-int main()
-{
-  Timer timer; //시작
-  timer.elapsed(); //종료
-  return 0;
-}
+//Timer timer //start
+//timer.elapsed() //quit
